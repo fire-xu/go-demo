@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: golang-demo
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: golang.demo.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: golang-demo
+          servicePort: 8080
