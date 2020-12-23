@@ -9,6 +9,11 @@ node('haimaxy-jnlp') {
         }
     }
 	}
+	stage('Sonar') {
+        echo "3.Sonar Stage"
+    sh 'mvn sonar:sonar -Dsonar.host.url=http://192.168.6.150:8050 -Dsonar.login=d6c8fb1706d3d5824db5ea1c9d9101d0b47801eb'
+
+    }
     stage('Build') {
         echo "3.Build Docker Image Stage"
     sh "docker build -t firexuxiaoman/golang-demo:${build_tag} ."
