@@ -12,10 +12,10 @@ node('haimaxy-jnlp') {
 	stage('Sonar') {
         echo "3.Sonar Stage"
     sh 'sonar-scanner \
-  -Dsonar.projectKey=python1 \
+  -Dsonar.projectKey=go-demo \
   -Dsonar.sources=. \
   -Dsonar.host.url=http://192.168.6.150:8050 \
-  -Dsonar.login=8fa5f29c83611ad51de080d24bf08b8e3ab64426'
+  -Dsonar.login=84ddf4ac1d135a594f9346c9598be3cab02535aa'
 
     }
     stage('Build') {
