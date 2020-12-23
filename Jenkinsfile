@@ -11,7 +11,11 @@ node('haimaxy-jnlp') {
 	}
 	stage('Sonar') {
         echo "3.Sonar Stage"
-    sh 'mvn sonar:sonar -Dsonar.host.url=http://192.168.6.150:8050 -Dsonar.login=d6c8fb1706d3d5824db5ea1c9d9101d0b47801eb'
+    sh 'sonar-scanner \
+  -Dsonar.projectKey=python1 \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://192.168.6.150:8050 \
+  -Dsonar.login=8fa5f29c83611ad51de080d24bf08b8e3ab64426'
 
     }
     stage('Build') {
