@@ -32,9 +32,11 @@ spec:
       labels:
         app: golang-demo
     spec:
+    imagePullSecrets:
+      - name: harbor
       containers:
       - name: golang-demo
-        image: firexuxiaoman/golang-demo:<BUILD_TAG>
+        image: reg.analyticservice.net/jenkins/jenkins-demo:<BUILD_TAG>
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
