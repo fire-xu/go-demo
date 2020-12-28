@@ -28,7 +28,6 @@ node('haimaxy-jnlp') {
         sh "docker login -u fire -p Pass1234 reg.analyticservice.net"
         sh "docker push reg.analyticservice.net/jenkins/golang-demo:${build_tag}"
     }
-        }
 		stage('Deploy') {
         echo "5. Deploy Stage"
         if (env.BRANCH_NAME == 'main') {
